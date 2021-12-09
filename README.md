@@ -3,7 +3,7 @@
 Temporary disposable chat-room / mail box generator, secure enough to keep your secrets.
 
 * **Base usage:** Initiate a chat room which can be used by over 200 people at the same time around the planet.
-* **Why this?**
+**Why this?**
 * Literally less than 5 seconds to create a private mailing list and start texting your mates.
 * **Instant reactions:** A `< 20ms latency` speed has been technically added with the latest release which allows users to chat in sharp real time.
 * **Dispose with refresh:** To dispose a chat room, the last user has to dispose the chat room by refreshing the page once making it extremely easy to keep your chats private.
