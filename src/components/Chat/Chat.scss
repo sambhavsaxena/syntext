@@ -13,6 +13,7 @@
         background:#EAEAEA;
         .message{
             .msg{
+                word-wrap: break-word;
                 color: rgba(0,0,0,.7);
             }
         }
@@ -22,6 +23,7 @@
                 display: none;
             }
             .msg{
+                word-wrap: break-word;
                 color: white;
                 background: #408EEA;
             }
