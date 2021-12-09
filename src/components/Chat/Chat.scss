@@ -68,5 +68,9 @@
         .messages{
             flex: 1;
         }
+       .messages > div{
+        min-height:100vh;
+        max-height:100vh;
+    }
     }
 }
