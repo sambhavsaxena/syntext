@@ -100,7 +100,7 @@ const Chat = () => {
                     </Box>)
                     )
                     :
-                    <Flex alignItems='center' justifyContent='center' mt='.5rem' bg='#EAEAEA' opacity='.2' w='100%'>
+                    <Flex alignItems='center' justifyContent='center' mt='.5rem' bg='#EAEAEA' opacity='.2' w='100%' marginTop='50%'>
                         <Box mr='2'>-----</Box>
                         <BiMessageDetail fontSize='1rem' />
                         <Text ml='1' fontWeight='400'>No messages</Text>
