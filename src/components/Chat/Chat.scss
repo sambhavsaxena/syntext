@@ -36,8 +36,9 @@
         align-items: flex-start;
         flex-direction: column;
         width: auto !important;
-        overflow:scroll;
-        min-height:400px;
+        overflow:auto;
+//         min-height:400px;
+        max-height:400px;
         padding: 1rem;
     }
     
