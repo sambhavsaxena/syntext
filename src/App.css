@@ -9,7 +9,3 @@
 *{
     outline: none !important;
 }
-
-@media screen and (max-width : 30em){
-    height: 90vh;
-}
