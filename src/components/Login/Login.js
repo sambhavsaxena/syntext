@@ -23,6 +23,13 @@ const Login = () => {
         })
     })
 
+    const handleKeyDown = (ev) => {
+        //Send on enter:
+        if (ev.keyCode === 13) {
+            if ((!!name || !!room) || (name || !!room) || (!!name || room)) handleClick()
+        }
+    }
+
     //Emits the login event and if successful redirects to chat and saves user data
     const handleClick = () => {
         socket.emit('login', { name, room }, error => {
@@ -33,7 +40,7 @@ const Login = () => {
                     title: "Error",
                     description: error,
                     status: "error",
-                    duration: 5000,
+                    duration: 2000,
                     isClosable: true,
                 })
             }
@@ -43,7 +50,7 @@ const Login = () => {
                 title: "Hey there",
                 description: `Welcome to ${room}`,
                 status: "success",
-                duration: 5000,
+                duration: 3200,
                 isClosable: true,
             })
         })
@@ -52,10 +59,10 @@ const Login = () => {
     return (
         <Flex className='login' flexDirection='column' mb='8'>
             <Heading as="h1" size="4xl" textAlign='center' mb='8' fontFamily='DM Sans' fontWeight='600' letterSpacing='-2px'>Fortlax.io</Heading>
-            <Footer/>
-            <Flex className="form" gap='1rem' flexDirection={{ base: "column", md: "row" }} style={{marginTop:'50px'}}>
-                <Input variant='filled' mr={{ base: "0", md: "4" }} mb={{ base: "4", md: "0" }} type="text" placeholder='User Name' value={name} onChange={e => setName(e.target.value)} />
-                <Input variant='filled' mr={{ base: "0", md: "4" }} mb={{ base: "4", md: "0" }} type="text" placeholder='Room Name' value={room} onChange={e => setRoom(e.target.value)} />
+            <Footer />
+            <Flex className="form" gap='1rem' flexDirection={{ base: "column", md: "row" }} style={{ marginTop: '50px' }}>
+                <Input onKeyDown={handleKeyDown} variant='filled' mr={{ base: "0", md: "4" }} mb={{ base: "4", md: "0" }} type="text" placeholder='User Name' value={name} onChange={e => setName(e.target.value)} />
+                <Input onKeyDown={handleKeyDown} variant='filled' mr={{ base: "0", md: "4" }} mb={{ base: "4", md: "0" }} type="text" placeholder='Room Name' value={room} onChange={e => setRoom(e.target.value)} />
                 <IconButton colorScheme='blue' isRound='true' icon={<RiArrowRightLine />} onClick={handleClick}></IconButton>
             </Flex>
         </Flex>

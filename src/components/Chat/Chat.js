@@ -8,8 +8,8 @@ import { BiMessageDetail } from 'react-icons/bi'
 import { RiSendPlaneFill } from 'react-icons/ri'
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { useToast } from "@chakra-ui/react"
-import './Chat.scss'
 import { UsersContext } from '../../usersContext'
+import './Chat.scss'
 
 const Chat = () => {
     const { name, room, setName, setRoom } = useContext(MainContext)
@@ -34,7 +34,6 @@ const Chat = () => {
     //Checks to see if there's a user present
     useEffect(() => { if (!name) return history.push('/') }, [history, name])
 
-
     useEffect(() => {
         socket.on("message", msg => {
             setMessages(messages => [...messages, msg]);
@@ -51,7 +50,6 @@ const Chat = () => {
             })
         })
     }, [socket, toast])
-
 
     const handleSendMessage = () => {
         socket.emit('sendMessage', message, () => setMessage(''))
@@ -109,7 +107,7 @@ const Chat = () => {
                 }
             </ScrollToBottom>
             <div className='form'>
-                <input type="text" placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} />
+                <input type="text" placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '60px' }} />
                 <IconButton colorScheme='green' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={message === '' || message === ' ' ? true : false}>Send</IconButton>
             </div>
         </Flex>
