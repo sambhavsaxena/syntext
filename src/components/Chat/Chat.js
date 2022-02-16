@@ -27,7 +27,12 @@ const Chat = () => {
         }
     }
     const handleChange = (ev) => {
-        setMessage(ev.target.value)
+        if (ev.target.value === ' ') {
+            return
+        }
+        else {
+            setMessage(ev.target.value)
+        }
     }
 
     window.onpopstate = e => logout()
@@ -81,13 +86,16 @@ const Chat = () => {
                         </MenuList>
                     </Menu>
                     <Flex alignItems='center' flexDirection='column' flex={{ base: "1", sm: "auto" }}>
-                        <Heading fontSize='lg'> {room.slice(0, 1).toUpperCase() + room.slice(1)}</Heading>
-                        <Flex alignItems='center'><Text mr='1' fontWeight='400' fontSize='md' opacity='.7' letterSpacing='0' >{name}</Text><Box h={2} w={2} borderRadius='100px' bg='green.300'></Box></Flex>
+                        <Heading fontSize='lg'> {room}</Heading>
+                        <Flex alignItems='center'>
+                            <Text mr='1' fontWeight='400' fontSize='md' opacity='.7' letterSpacing='0' >#{users.length}</Text>
+                            <Text mr='1' fontWeight='400' fontSize='md' opacity='.7' letterSpacing='0' >@{name}</Text>
+                            <Box h={2} w={2} borderRadius='100px' bg='green.300'></Box>
+                        </Flex>
                     </Flex>
                     <Button color='gray.500' fontSize='sm' onClick={logout}  >Logout</Button>
                 </Flex>
             </Heading>
-
 
             <ScrollToBottom className='messages' debug={false}>
                 {messages.length > 0 ?
