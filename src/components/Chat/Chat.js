@@ -102,15 +102,13 @@ const Chat = () => {
                     messages.map((msg, i) =>
                     (<Box key={i} className={`message ${msg.user === name ? "my-message" : ""}`} m=".2rem 0">
                         <Text fontSize='xs' opacity='.7' ml='5px' className='user'>{msg.user}</Text>
-                        <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' borderRadius='15px' color='white'>{msg.text}</Text>
+                        <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' borderRadius='15px' color='white' overflowWrap={'break-word'}>{msg.text}</Text>
                     </Box>)
                     )
                     :
                     <Flex alignItems='center' justifyContent='center' mt='.5rem' bg='#EAEAEA' opacity='.2' w='100%' marginTop='50%'>
-                        <Box mr='2'>-----</Box>
                         <BiMessageDetail fontSize='1rem' />
                         <Text ml='1' fontWeight='400'>No messages</Text>
-                        <Box ml='2'>-----</Box>
                     </Flex>
                 }
             </ScrollToBottom>

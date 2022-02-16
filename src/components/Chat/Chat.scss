@@ -28,7 +28,6 @@
                 background: #408EEA;
             }
         }
-
     }
 
     .messages > div{
@@ -68,7 +67,9 @@
         .messages{
             flex: 1;
         }
-    min-height:100vh;
-    max-height:100vh;
+       .messages > div{
+        min-height:85vh;
+        max-height:85vh;
+    }
     }
 }
