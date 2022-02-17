@@ -102,7 +102,7 @@ const Chat = () => {
                     messages.map((msg, i) =>
                     (<Box key={i} className={`message ${msg.user === name ? "my-message" : ""}`} m=".2rem 0">
                         <Text fontSize='xs' opacity='.7' ml='5px' className='user'>{msg.user}</Text>
-                        <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' borderRadius='15px' color='white' overflowWrap={'break-word'}>{msg.text}</Text>
+                        <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' borderRadius='15px' color='white' wordBreak={'break-word'} overflow={'auto'}>{msg.text}</Text>
                     </Box>)
                     )
                     :
@@ -113,11 +113,10 @@ const Chat = () => {
                 }
             </ScrollToBottom>
             <div className='form'>
-                <input type="text" autoFocus placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '60px' }} />
+                <input type="text" autoFocus placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '60px' }} maxLength={'1500'} />
                 <IconButton colorScheme='green' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={message === '' || message === ' ' ? true : false}>Send</IconButton>
             </div>
         </Flex>
-
     )
 }
 

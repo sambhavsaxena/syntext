@@ -12,18 +12,19 @@
     .messages{
         background:#EAEAEA;
         .message{
+            margin-right: 12px;
             .msg{
-                word-wrap: break-word;
                 color: rgba(0,0,0,.7);
             }
         }
         .my-message{
             align-self: flex-end;
+            margin-right: -3px;
+            margin-left: 12px;
             .user{
                 display: none;
             }
             .msg{
-                word-wrap: break-word;
                 color: white;
                 background: #408EEA;
             }
@@ -40,7 +41,7 @@
         max-height:400px;
         padding: 1rem;
     }
-    
+
     .form{
         position: relative;
         z-index: 1000;
