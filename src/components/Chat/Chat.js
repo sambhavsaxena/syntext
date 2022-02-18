@@ -122,7 +122,7 @@ const Chat = () => {
                     </Flex>
                 }
             </ScrollToBottom>
-            {(typing) ? <Text fontSize='xs' opacity='.7' ml='5px' className='user'>someone is typing</Text> : <Text fontSize='xs' opacity='.7' ml='5px' className='user'>idle</Text>}
+            {(typing) ? <Text fontSize='xs' opacity='.7' ml='5px' className='user' style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>someone is typing</Text> : <Text fontSize='xs' opacity='.7' ml='5px' className='user' style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>idle</Text>}
             <div className='form'>
                 <input type="text" autoFocus placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '60px' }} maxLength={'1500'} />
                 <IconButton colorScheme='green' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={message === '' || message === ' ' ? true : false}>Send</IconButton>
