@@ -19,24 +19,29 @@ const Chat = () => {
     const { users } = useContext(UsersContext)
     const history = useHistory()
     const toast = useToast()
+    var [typing, setTyping] = useState(false)
 
     const handleKeyDown = (ev) => {
         //Send on enter:
         if (ev.keyCode === 13) {
-            if (!!message) handleSendMessage()
+            if (!!message) {
+                socket.emit('typing', { typing: false, name: name, room: room })
+                handleSendMessage()
+            }
         }
     }
+
     const handleChange = (ev) => {
         if (ev.target.value === ' ') {
             return
         }
         else {
+            socket.emit('typing', { typing: true, name: name, room: room })
             setMessage(ev.target.value)
         }
     }
 
     window.onpopstate = e => logout()
-    //Checks to see if there's a user present
     useEffect(() => { if (!name) return history.push('/') }, [history, name])
 
     useEffect(() => {
@@ -44,6 +49,12 @@ const Chat = () => {
             setMessages(messages => [...messages, msg]);
         })
 
+        socket.on('display', (data) => {
+            if (data.typing === true)
+                setTyping(true)
+            else
+                setTyping(false)
+        })
         socket.on("notification", notif => {
             toast({
                 position: "top",
@@ -96,7 +107,6 @@ const Chat = () => {
                     <Button color='gray.500' fontSize='sm' onClick={logout}  >Logout</Button>
                 </Flex>
             </Heading>
-
             <ScrollToBottom className='messages' debug={false}>
                 {messages.length > 0 ?
                     messages.map((msg, i) =>
@@ -112,6 +122,7 @@ const Chat = () => {
                     </Flex>
                 }
             </ScrollToBottom>
+            {(typing) ? <Text fontSize='xs' opacity='.7' ml='5px' className='user'>someone is typing</Text> : <Text fontSize='xs' opacity='.7' ml='5px' className='user'>idle</Text>}
             <div className='form'>
                 <input type="text" autoFocus placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '60px' }} maxLength={'1500'} />
                 <IconButton colorScheme='green' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={message === '' || message === ' ' ? true : false}>Send</IconButton>
