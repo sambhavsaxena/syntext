@@ -25,7 +25,6 @@ const Chat = () => {
         //Send on enter:
         if (ev.keyCode === 13) {
             if (!!message) {
-                socket.emit('typing', { typing: false, name: name, room: room })
                 handleSendMessage()
             }
         }
@@ -68,6 +67,7 @@ const Chat = () => {
     }, [socket, toast])
 
     const handleSendMessage = () => {
+        socket.emit('typing', { typing: false, name: name, room: room })
         socket.emit('sendMessage', message, () => setMessage(''))
         setMessage('')
     }
