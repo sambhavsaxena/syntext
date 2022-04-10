@@ -19,7 +19,8 @@ const Chat = () => {
     const { users } = useContext(UsersContext)
     const history = useHistory()
     const toast = useToast()
-    var [typing, setTyping] = useState(false)
+    const [typing, setTyping] = useState(false)
+    const [data, setData] = useState({})
 
     const handleKeyDown = (ev) => {
         //Send on enter:
@@ -30,18 +31,29 @@ const Chat = () => {
         }
     }
 
+    const startTyping = () => {
+        socket.emit('typing', { typing: true, name: name, room: room })
+    }
+
+    const stopTyping = () => {
+        socket.emit('typing', { typing: false, name: name, room: room })
+    }
+
     const handleChange = (ev) => {
         if (ev.target.value === ' ') {
             return
         }
         else {
-            socket.emit('typing', { typing: true, name: name, room: room })
+            startTyping();
             setMessage(ev.target.value)
         }
     }
 
     window.onpopstate = e => logout()
-    useEffect(() => { if (!name) return history.push('/') }, [history, name])
+
+    useEffect(() => {
+        if (!name) return history.push('/');
+    }, [history, name])
 
     useEffect(() => {
         socket.on("message", msg => {
@@ -49,6 +61,7 @@ const Chat = () => {
         })
 
         socket.on('display', (data) => {
+            setData(data)
             if (data.typing === true)
                 setTyping(true)
             else
@@ -67,13 +80,9 @@ const Chat = () => {
     }, [socket, toast])
 
     const handleSendMessage = () => {
-        socket.emit('typing', { typing: false, name: name, room: room })
+        stopTyping()
         socket.emit('sendMessage', message, () => setMessage(''))
         setMessage('')
-    }
-
-    const stoptyping = () => {
-        socket.emit('typing', { typing: false, name: name, room: room })
     }
 
     const logout = () => {
@@ -126,9 +135,9 @@ const Chat = () => {
                     </Flex>
                 }
             </ScrollToBottom>
-            {(typing) ? <Text fontSize='xs' opacity='.7' ml='5px' className='user' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>someone is typing</Text> : <Text fontSize='xs' opacity='.7' ml='5px' className='user' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>idle</Text>}
+            {(typing && (data.name !== name)) ? <Text fontSize='xs' opacity='.7' ml='5px' className='user' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{name} is typing</Text> : <Text fontSize='xs' opacity='.7' ml='5px' className='user' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>idle</Text>}
             <div className='form'>
-                <input type="text" autoFocus placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '60px' }} maxLength={'1500'} onBlur={stoptyping} />
+                <input type="text" autoFocus placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '60px' }} maxLength={'1500'} onBlur={stopTyping} />
                 <IconButton colorScheme='green' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={message === '' || message === ' ' ? true : false}>Send</IconButton>
             </div>
         </Flex>
