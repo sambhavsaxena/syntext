@@ -135,7 +135,7 @@ const Chat = () => {
                     </Flex>
                 }
             </ScrollToBottom>
-            {(typing && (data.name !== name)) ? <Text fontSize='xs' opacity='.7' ml='5px' className='user' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{name} is typing</Text> : <Text fontSize='xs' opacity='.7' ml='5px' className='user' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>idle</Text>}
+            {(typing && (data.name !== name)) ? <Text fontSize='xs' opacity='.7' ml='5px' className='user' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{name} is sexy</Text> : <Text fontSize='xs' opacity='.7' ml='5px' className='user' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>idle</Text>}
             <div className='form'>
                 <input type="text" autoFocus placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '60px' }} maxLength={'1500'} onBlur={stopTyping} />
                 <IconButton colorScheme='green' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={message === '' || message === ' ' ? true : false}>Send</IconButton>
