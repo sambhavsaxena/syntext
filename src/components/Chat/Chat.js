@@ -7,6 +7,7 @@ import { FiList } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
 import { RiSendPlaneFill } from 'react-icons/ri'
 import ScrollToBottom from 'react-scroll-to-bottom';
+import Linkify from 'react-linkify';
 import { useToast } from "@chakra-ui/react"
 import { UsersContext } from '../../usersContext'
 import './Chat.scss'
@@ -125,7 +126,7 @@ const Chat = () => {
                     messages.map((msg, i) =>
                     (<Box key={i} className={`message ${msg.user === name ? "my-message" : ""}`} m=".2rem 0">
                         <Text fontSize='xs' opacity='.7' ml='5px' className='user'>{msg.user}</Text>
-                        <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' borderRadius='15px' color='white' wordBreak={'break-word'} overflow={'auto'}>{msg.text}</Text>
+                        <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' borderRadius='15px' color='white' wordBreak={'break-word'} overflow={'auto'}><Linkify>{msg.text}</Linkify></Text>
                     </Box>)
                     )
                     :
