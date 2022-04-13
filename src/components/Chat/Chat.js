@@ -11,6 +11,8 @@ import Linkify from 'react-linkify';
 import { useToast } from "@chakra-ui/react"
 import { UsersContext } from '../../usersContext'
 import './Chat.scss'
+import Lottie from "react-lottie";
+import anim from './typing.json'
 
 const Chat = () => {
     const { name, room, setName, setRoom } = useContext(MainContext)
@@ -51,6 +53,15 @@ const Chat = () => {
     }
 
     window.onpopstate = e => logout()
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: anim,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        },
+    };
 
     useEffect(() => {
         if (!name) return history.push('/');
@@ -136,7 +147,9 @@ const Chat = () => {
                     </Flex>
                 }
             </ScrollToBottom>
-            {(typing && (data.name !== name)) ? <Text fontSize='xs' opacity='.7' ml='5px' className='user' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{name} is typing</Text> : <Text fontSize='xs' opacity='.7' ml='5px' className='user' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>idle</Text>}
+            {(typing && (data.name !== name)) ? <div>
+                <Lottie options={defaultOptions} height={20} width={25} />
+            </div> : null}
             <div className='form'>
                 <input type="text" autoFocus placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '60px' }} maxLength={'1500'} onBlur={stopTyping} />
                 <IconButton colorScheme='green' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={message === '' || message === ' ' ? true : false}>Send</IconButton>
