@@ -30,6 +30,7 @@ const Login = () => {
         setIsLoading(true)
         socket.emit('login', { name, room }, error => {
             if (error) {
+                setIsLoading(false)
                 return toast({
                     position: "top",
                     title: "Error",
@@ -59,7 +60,7 @@ const Login = () => {
             <Flex className="form" gap='1rem' flexDirection={{ base: "column", md: "row" }} style={{ marginTop: '50px' }}>
                 <Input onKeyDown={handleKeyDown} variant='filled' mr={{ base: "0", md: "4" }} mb={{ base: "4", md: "0" }} type="text" placeholder='User Name' autoFocus maxLength={'25'} value={name} onChange={e => setName(e.target.value.toLowerCase().trim().split(/ +/).join(' '))} />
                 <Input onKeyDown={handleKeyDown} variant='filled' mr={{ base: "0", md: "4" }} mb={{ base: "4", md: "0" }} type="text" placeholder='Room Name' value={room} maxLength={'25'} onChange={e => setRoom(e.target.value.toLowerCase().trim().split(/ +/).join(' '))} />
-                <IconButton colorScheme='blue' isRound='true' icon={isLoading ? <Spinner size='xl' /> : <RiArrowRightLine />} onClick={handleClick}></IconButton>
+                <IconButton colorScheme='blue' isRound='true' icon={isLoading ? <Spinner size='md' /> : <RiArrowRightLine />} onClick={handleClick}></IconButton>
             </Flex>
             <div>
             </div>
