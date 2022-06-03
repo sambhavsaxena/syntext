@@ -6,8 +6,8 @@ export default function DefaultPage() {
     const history = useHistory()
     const redirect = () => history.push('/')
     return (
-        <div>
-            <IconButton mr={2} isRound='true' bg='green.300' color='white' icon={<BiArrowBack />} onClick={redirect} /> You're lost. Go home.
+        <div style={{ border: '1px solid', borderRadius: '50px', padding: '12px' }}>
+            <IconButton mr={2} isRound='true' color='black' colorScheme='blue' icon={<BiArrowBack />} onClick={redirect} /> Lost your way? Go home.
         </div>
     )
 }

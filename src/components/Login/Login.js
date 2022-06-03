@@ -55,16 +55,20 @@ const Login = () => {
 
     return (
         <Flex className='login' flexDirection='column' mb='8'>
-            <Heading as="h1" size="4xl" textAlign='center' mb='8' fontFamily='DM Sans' fontWeight='600' letterSpacing='-2px'>Fortlax.io</Heading>
+            <Heading as="h1" size="4xl" color='whiteAlpha.600' textAlign='center' mb='8' fontFamily='DM Sans' fontWeight='600' letterSpacing='-2px'>
+                <div style={{ textShadow: '-1px -1px 200px rgb(0, 0, 255)' }}>
+                    Fortlax.io
+                </div>
+            </Heading>
             <Footer />
             <Flex className="form" gap='1rem' flexDirection={{ base: "column", md: "row" }} style={{ marginTop: '50px' }}>
-                <Input onKeyDown={handleKeyDown} variant='filled' mr={{ base: "0", md: "4" }} mb={{ base: "4", md: "0" }} type="text" placeholder='User Name' autoFocus maxLength={'25'} value={name} onChange={e => setName(e.target.value.toLowerCase().trim().split(/ +/).join(' '))} />
-                <Input onKeyDown={handleKeyDown} variant='filled' mr={{ base: "0", md: "4" }} mb={{ base: "4", md: "0" }} type="text" placeholder='Room Name' value={room} maxLength={'25'} onChange={e => setRoom(e.target.value.toLowerCase().trim().split(/ +/).join(' '))} />
-                <IconButton colorScheme='blue' isRound='true' icon={isLoading ? <Spinner size='md' /> : <RiArrowRightLine />} onClick={handleClick}></IconButton>
+                <Input onKeyDown={handleKeyDown} color='whiteAlpha.500' mr={{ base: "0", md: "4" }} mb={{ base: "4", md: "0" }} type="text" placeholder='User Name' autoFocus maxLength={'12'} value={name} onChange={e => setName(e.target.value.toLowerCase().trim().split(/ +/).join(' '))} />
+                <Input onKeyDown={handleKeyDown} color='whiteAlpha.500' mr={{ base: "0", md: "4" }} mb={{ base: "4", md: "0" }} type="text" placeholder='Room Name' value={room} maxLength={'12'} onChange={e => setRoom(e.target.value.toLowerCase().trim().split(/ +/).join(' '))} />
+                <IconButton style={{ border: '1px solid' }} colorScheme='black' isRound='true' icon={isLoading ? <Spinner size='md' /> : <RiArrowRightLine />} onClick={handleClick}></IconButton>
             </Flex>
             <div>
             </div>
-        </Flex>
+        </Flex >
     )
 }
 

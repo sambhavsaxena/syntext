@@ -26,7 +26,6 @@ const Chat = () => {
     const [data, setData] = useState({})
 
     const handleKeyDown = (ev) => {
-        //Send on enter:
         if (ev.keyCode === 13) {
             if (!!message) {
                 handleSendMessage()
@@ -65,9 +64,7 @@ const Chat = () => {
 
     useEffect(() => {
         if (!name) return history.push('/');
-    }, [history, name])
 
-    useEffect(() => {
         socket.on("message", msg => {
             setMessages(messages => [...messages, msg]);
         })
@@ -89,7 +86,7 @@ const Chat = () => {
                 isClosable: true,
             })
         })
-    }, [socket, toast])
+    }, [socket, toast, history, name])
 
     const handleSendMessage = () => {
         stopTyping()
@@ -105,15 +102,15 @@ const Chat = () => {
 
     return (
         <Flex className='room' flexDirection='column' width={{ base: "100%", sm: '575px' }} height={{ base: "100%", sm: "auto" }}>
-            <Heading className='heading' as='h4' bg='white' p='1rem 1.5rem' borderRadius='10px 10px 0 0'>
+            <Heading className='heading' as='h4' bg='black' p='1rem 1.5rem' borderRadius='10px 10px 0 0'>
                 <Flex alignItems='center' justifyContent='space-between'>
-                    <Menu >
-                        <MenuButton as={IconButton} icon={<FiList />} isRound='true' bg='blue.300' color='white' />
-                        <MenuList>
+                    <Menu bg='black' >
+                        <MenuButton as={IconButton} colorScheme='black' bg='black' icon={<FiList />} isRound='true' color='grey' />
+                        <MenuList bg='black'>
                             {
                                 users && users.map(user => {
                                     return (
-                                        <MenuItem minH='40px' key={user.id}>
+                                        <MenuItem bg='black' color='#408EEA' minH='40px' key={user.id}>
                                             <Text fontSize='sm'>{user.name}</Text>
                                         </MenuItem>
                                     )
@@ -122,16 +119,16 @@ const Chat = () => {
                         </MenuList>
                     </Menu>
                     <Flex alignItems='center' flexDirection='column' flex={{ base: "1", sm: "auto" }}>
-                        <Heading fontSize='lg'> {room}</Heading>
+                        <Heading fontSize='lg' color='#1e589b'> {room}</Heading>
                         <Flex alignItems='center'>
                             <Text mr='1' fontWeight='400' fontSize='md' opacity='.7' letterSpacing='0' >#{users.length}</Text>
                             <Text mr='1' fontWeight='400' fontSize='md' opacity='.7' letterSpacing='0' >@{name}</Text>
-                            <Box h={2} w={2} borderRadius='100px' bg='green.300'></Box>
+                            {users.length > 1 ? <Box style={{ marginLeft: '2px' }} h={2} w={2} borderRadius='100px' bg='green.300'></Box> : <Box style={{ marginLeft: '2px' }} h={2} w={2} borderRadius='100px' bg='red.500'></Box>}
                         </Flex>
                     </Flex>
-                    <Button color='gray.500' fontSize='sm' onClick={logout}  >Logout</Button>
+                    <Button style={{ border: '0.5px solid grey' }} bg='black' fontSize='sm' onClick={logout}  >Logout</Button>
                 </Flex>
-            </Heading>
+            </Heading >
             <ScrollToBottom className='messages' debug={false}>
                 {messages.length > 0 ?
                     messages.map((msg, i) =>
@@ -141,20 +138,22 @@ const Chat = () => {
                     </Box>)
                     )
                     :
-                    <Flex alignItems='center' justifyContent='center' mt='.5rem' bg='#EAEAEA' opacity='.2' w='100%' marginTop='50%'>
-                        <BiMessageDetail fontSize='1rem' />
-                        <Text ml='1' fontWeight='400'>No messages</Text>
+                    <Flex alignItems='center' justifyContent='center' mt='.5rem' opacity='.2' w='100%' marginTop='50%'>
+                        <BiMessageDetail color='white' fontSize='1rem' />
+                        <Text color='white' ml='1' fontWeight='400'>No messages</Text>
                     </Flex>
                 }
-            </ScrollToBottom>
-            {(typing && (data.name !== name)) ? <div>
-                <Lottie options={defaultOptions} height={20} width={25} />
-            </div> : null}
-            <div className='form'>
-                <input type="text" autoFocus placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '60px' }} maxLength={'1500'} onBlur={stopTyping} />
-                <IconButton colorScheme='green' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={message === '' || message === ' ' ? true : false}>Send</IconButton>
+            </ScrollToBottom >
+            {
+                (typing && (data.name !== name)) ? <div style={{ backgroundColor: 'black' }}>
+                    <Lottie options={defaultOptions} height={20} width={25} />
+                </div> : null
+            }
+            <div className='form' style={{ backgroundColor: 'black' }} >
+                <input type="text" autoFocus placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '64px' }} maxLength={'1500'} onBlur={stopTyping} />
+                <IconButton colorScheme='blue' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={message === '' || message === ' ' ? true : false}>Send</IconButton>
             </div>
-        </Flex>
+        </Flex >
     )
 }
 

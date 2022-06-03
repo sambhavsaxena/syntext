@@ -1,6 +1,13 @@
 .room {
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, .1);
-    border-radius: 5px;
+    box-shadow: -1px -1px 50px rgb(0, 0, 255);
+    animation: custom-animation 6s infinite;
+    border-radius: 15px;
+
+    @keyframes custom-animation {
+        50% {
+            box-shadow: 1px 1px 25px rgb(0, 0, 0);
+        }
+    }
 
     .heading {
         font-family: 'DM Sans';
@@ -11,14 +18,20 @@
     }
 
     .messages {
-        background: #EAEAEA;
+        background: black;
 
         .message {
             margin-right: 12px;
 
+            .user {
+                color: #1e589b;
+            }
+
             .msg {
+                border: 1px solid #1e589b;
+                color: white;
+                background: rgba(0, 0, 0, 0.9);
                 width: fit-content;
-                color: rgba(0, 0, 0, .7);
 
                 a {
                     color: red;
@@ -36,11 +49,12 @@
             }
 
             .msg {
-                color: white;
-                background: #408EEA;
+                border: 1px solid rgba(78, 78, 78, 0.788);
+                color: rgba(255, 255, 255, 0.8);
+                background: rgb(0, 0, 0);
 
                 a {
-                    color: black;
+                    color: rgba(255, 0, 0, 0.5);
                 }
             }
         }
@@ -62,10 +76,12 @@
         z-index: 1000;
 
         input {
+            background-color: black;
+            color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(41, 41, 41, 0.4);
             width: 100%;
             padding: 1.5rem;
-            border-radius: 0px 0px 10px 10px;
-
+            border-radius: 0px 0px 0px 0px;
         }
 
         button {
@@ -91,4 +107,20 @@
             max-height: 85vh;
         }
     }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(30, 88, 155);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(30, 88, 155);
 }
