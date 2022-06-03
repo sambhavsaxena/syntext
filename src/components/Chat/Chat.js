@@ -150,6 +150,7 @@ const Chat = () => {
                 </div> : null
             }
             <div className='form' style={{ backgroundColor: 'black' }} >
+                <hr />
                 <input type="text" autoFocus placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '64px' }} maxLength={'1500'} onBlur={stopTyping} />
                 <IconButton colorScheme='blue' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={message === '' || message === ' ' ? true : false}>Send</IconButton>
             </div>

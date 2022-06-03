@@ -1,7 +1,6 @@
 .room {
     box-shadow: -1px -1px 50px rgb(0, 0, 255);
     animation: custom-animation 6s infinite;
-    border-radius: 15px;
 
     @keyframes custom-animation {
         50% {
@@ -78,10 +77,9 @@
         input {
             background-color: black;
             color: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(41, 41, 41, 0.4);
             width: 100%;
             padding: 1.5rem;
-            border-radius: 0px 0px 0px 0px;
+            border-radius: 0px 0px 15px 15px;
         }
 
         button {
