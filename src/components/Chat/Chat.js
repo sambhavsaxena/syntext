@@ -11,8 +11,6 @@ import Linkify from 'react-linkify';
 import { useToast } from "@chakra-ui/react"
 import { UsersContext } from '../../usersContext'
 import './Chat.scss'
-import Lottie from "react-lottie";
-import anim from './typing.json'
 
 const Chat = () => {
     const { name, room, setName, setRoom } = useContext(MainContext)
@@ -22,8 +20,6 @@ const Chat = () => {
     const { users } = useContext(UsersContext)
     const history = useHistory()
     const toast = useToast()
-    const [typing, setTyping] = useState(false)
-    const [data, setData] = useState({})
 
     const handleKeyDown = (ev) => {
         if (ev.keyCode === 13) {
@@ -33,34 +29,16 @@ const Chat = () => {
         }
     }
 
-    const startTyping = () => {
-        socket.emit('typing', { typing: true, name: name, room: room })
-    }
-
-    const stopTyping = () => {
-        socket.emit('typing', { typing: false, name: name, room: room })
-    }
-
     const handleChange = (ev) => {
         if (ev.target.value === ' ') {
             return
         }
         else {
-            startTyping();
             setMessage(ev.target.value)
         }
     }
 
     window.onpopstate = e => logout()
-
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: anim,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice",
-        },
-    };
 
     useEffect(() => {
         if (!name) return history.push('/');
@@ -69,13 +47,6 @@ const Chat = () => {
             setMessages(messages => [...messages, msg]);
         })
 
-        socket.on('display', (data) => {
-            setData(data)
-            if (data.typing === true)
-                setTyping(true)
-            else
-                setTyping(false)
-        })
         socket.on("notification", notif => {
             toast({
                 position: "top",
@@ -89,7 +60,6 @@ const Chat = () => {
     }, [socket, toast, history, name])
 
     const handleSendMessage = () => {
-        stopTyping()
         socket.emit('sendMessage', message, () => setMessage(''))
         setMessage('')
     }
@@ -144,14 +114,9 @@ const Chat = () => {
                     </Flex>
                 }
             </ScrollToBottom >
-            {
-                (typing && (data.name !== name)) ? <div style={{ backgroundColor: 'black' }}>
-                    <Lottie options={defaultOptions} height={20} width={25} />
-                </div> : null
-            }
             <div className='form' style={{ backgroundColor: 'black' }} >
                 <hr />
-                <input type="text" autoFocus placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '64px' }} maxLength={'1500'} onBlur={stopTyping} />
+                <input type="text" autoFocus placeholder='Enter message' value={message} onChange={handleChange} onKeyDown={handleKeyDown} style={{ paddingRight: '64px' }} maxLength={'1500'} />
                 <IconButton colorScheme='blue' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={message === '' || message === ' ' ? true : false}>Send</IconButton>
             </div>
         </Flex >
