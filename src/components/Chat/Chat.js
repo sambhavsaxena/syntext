@@ -95,14 +95,13 @@ const Chat = () => {
                         </MenuList>
                     </Menu>
                     <Flex alignItems='center' flexDirection='column' flex={{ base: "1", sm: "auto" }}>
-                        <Heading fontSize='lg' color='#1e589b'> {room}</Heading>
+                        {users.length > 1 ? <Heading fontSize='md' color='green.400'>{room}</Heading> : <Heading fontSize='xl' color='red'>{room}</Heading>}
                         <Flex alignItems='center'>
-                            <Text mr='1' fontWeight='400' fontSize='md' opacity='.7' letterSpacing='0' >#{users.length}</Text>
-                            <Text mr='1' fontWeight='400' fontSize='md' opacity='.7' letterSpacing='0' >@{name}</Text>
-                            {users.length > 1 ? <Box style={{ marginLeft: '2px' }} h={2} w={2} borderRadius='100px' bg='green.300'></Box> : <Box style={{ marginLeft: '2px' }} h={2} w={2} borderRadius='100px' bg='red.500'></Box>}
+                            <Text mr='1' fontWeight='400' fontSize='xs' opacity='1' letterSpacing='0' color='whiteAlpha.800'> #{users.length}</Text>
+                            <Text mr='1' fontWeight='400' fontSize='xs' opacity='1' letterSpacing='0' color='whiteAlpha.800'>  : {name} </Text>
                         </Flex>
                     </Flex>
-                    <Button style={{ border: '0.5px solid grey' }} bg='black' fontSize='sm' onClick={logout}  >Logout</Button>
+                    <Button style={{ border: '0.5px solid grey' }} bg='black' fontSize='sm' onClick={logout} color='#253bff'>Logout</Button>
                 </Flex>
             </Heading >
             <ScrollToBottom className='messages' debug={false}>
