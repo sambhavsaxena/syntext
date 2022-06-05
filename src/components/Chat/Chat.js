@@ -38,6 +38,12 @@ const Chat = () => {
         }
     }
 
+    const componentDecorator = (href, text, key) => (
+        <a href={href} key={key} target="_blank" rel="noreferrer">
+            {text}
+        </a>
+    );
+
     window.onpopstate = e => logout()
 
     useEffect(() => {
@@ -104,7 +110,7 @@ const Chat = () => {
                     messages.map((msg, i) =>
                     (<Box key={i} className={`message ${msg.user === name ? "my-message" : ""}`} m=".2rem 0">
                         <Text fontSize='xs' opacity='.7' ml='5px' className='user'>{msg.user}</Text>
-                        <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' borderRadius='15px' color='white' wordBreak={'break-word'} overflow={'auto'}><Linkify>{msg.text}</Linkify></Text>
+                        <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' borderRadius='15px' color='white' wordBreak={'break-word'} overflow={'auto'}><Linkify componentDecorator={componentDecorator}>{msg.text}</Linkify></Text>
                     </Box>)
                     )
                     :
