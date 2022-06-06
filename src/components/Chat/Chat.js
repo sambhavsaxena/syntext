@@ -95,13 +95,15 @@ const Chat = () => {
                         </MenuList>
                     </Menu>
                     <Flex alignItems='center' flexDirection='column' flex={{ base: "1", sm: "auto" }}>
-                        {users.length > 1 ? <Heading fontSize='md' color='green.400'>{room}</Heading> : <Heading fontSize='xl' color='red'>{room}</Heading>}
+                        {users.length > 1 ? <Heading fontSize='xl' color='green.400'>{room}</Heading> : <Heading fontSize='xl' color='red'>{room}</Heading>}
                         <Flex alignItems='center'>
-                            <Text mr='1' fontWeight='400' fontSize='xs' opacity='1' letterSpacing='0' color='whiteAlpha.800'> #{users.length}</Text>
-                            <Text mr='1' fontWeight='400' fontSize='xs' opacity='1' letterSpacing='0' color='whiteAlpha.800'>  : {name} </Text>
+                            {
+                                users.length > 1 ? <Text mr='1' fontWeight='400' fontSize='xs' opacity='1' letterSpacing='0' color='green.400'>  @{name} - (connected) - #{users.length} </Text> :
+                                    <Text mr='1' fontWeight='400' fontSize='xs' opacity='1' letterSpacing='0' color='red'> @{name} - (disconnected) - #{users.length} </Text>
+                            }
                         </Flex>
                     </Flex>
-                    <Button style={{ border: '0.5px solid grey' }} bg='black' fontSize='sm' onClick={logout} color='#253bff'>Logout</Button>
+                    <Button style={{ border: '0.5px solid grey' }} bg='black' fontSize='sm' onClick={logout} color='#253bff'>Leave</Button>
                 </Flex>
             </Heading >
             <ScrollToBottom className='messages' debug={false}>
@@ -109,7 +111,9 @@ const Chat = () => {
                     messages.map((msg, i) =>
                     (<Box key={i} className={`message ${msg.user === name ? "my-message" : ""}`} m=".2rem 0">
                         <Text fontSize='xs' opacity='.7' ml='5px' className='user'>{msg.user}</Text>
-                        <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' borderRadius='15px' color='white' wordBreak={'break-word'} overflow={'auto'}><Linkify componentDecorator={componentDecorator}>{msg.text}</Linkify></Text>
+                        <Text fontSize='sm' className='msg' p=".4rem .8rem" bg='white' borderRadius='15px' color='white' wordBreak={'break-word'} overflow={'auto'}>
+                            <Linkify componentDecorator={componentDecorator}>{msg.text}</Linkify>
+                        </Text>
                     </Box>)
                     )
                     :
