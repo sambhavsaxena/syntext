@@ -6,7 +6,7 @@ Temporary disposable chat-room / mail box generator, secure enough to keep your 
 * **Why this:** Literally less than 5 seconds required to create a private mailing list and start texting your mates.
 * **Low latency:** Less than `400ms` of total websocket end-points connection time tested across the planet.
 
-<div align="center">
+<div align="center" style="display: 'flex', flex-direction: 'row'">
   <img src="https://user-images.githubusercontent.com/76242518/182447905-296aed99-64b2-4e13-86d3-bddbb2f8e1fe.png">
    <img src="https://user-images.githubusercontent.com/76242518/182450112-5281b935-4997-4784-9be9-1d10469184cd.png">
  </div>
