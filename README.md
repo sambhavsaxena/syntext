@@ -10,12 +10,6 @@ Temporary disposable chat-room / mail box generator, secure enough to keep your 
   <img src="https://user-images.githubusercontent.com/76242518/182447905-296aed99-64b2-4e13-86d3-bddbb2f8e1fe.png">
 </div>
 
----
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/76242518/182450112-5281b935-4997-4784-9be9-1d10469184cd.png">
-</div>
-
 * **Dispose with refresh:** To dispose a chat room, the last user has to dispose the chat room by refreshing the page once making it extremely easy to keep your chats private.
 * **No database permit:** The service is officially licensed to use no actual database service. This means the information you provide to this web app, your name, every bit of conversation, nothing is ever stored.
 * **Clean UI:** The app uses [Material UI](https://mui.com/) and [Chakra UI](https://chakra-ui.com/) for a clean interface.
