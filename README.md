@@ -20,10 +20,9 @@ Follow the steps to get started. **You can use as little or as much React as you
 * Fork and clone [this](https://github.com/sambhavsaxena/fortlax.io) repository to make an instant copy of the content.
 * Alternatively, you can download the source and set it up with Github Desktop.
 * Open the root folder in the code editor of your preference, and run the following commands:
-
-1) npm install
-2) npm start
-3) Server is configured in [SocketContent.js](https://github.com/sambhavsaxena/fortlax.io/blob/main/src/socketContext.js).
+* - npm install
+* - npm start
+* - server is configured in [SocketContent.js](https://github.com/sambhavsaxena/fortlax.io/blob/main/src/socketContext.js).
 
 ###### [Fortlax-server](https://github.com/sambhavsaxena/fortlax-server) is used as the realtime server for this client.
 
