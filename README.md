@@ -4,9 +4,19 @@ Temporary disposable chat-room / mail box generator, secure enough to keep your 
 
 * **Base usage:** Initiate a chat room which can be used by over 200 people at the same time around the planet.
 * **Why this:** Literally less than 5 seconds required to create a private mailing list and start texting your mates.
-* **Low latency:** Less than `800ms` of total websocket end-points connection time tested across the planet.
+* **Low latency:** Less than `400ms` of total websocket end-points connection time tested across the planet.
 
-<div align="center"><img src="https://user-images.githubusercontent.com/76242518/182447905-296aed99-64b2-4e13-86d3-bddbb2f8e1fe.png"></div>
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/76242518/182447905-296aed99-64b2-4e13-86d3-bddbb2f8e1fe.png">
+ </div>
+
+<div align="center">over the following network</div>
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/76242518/182450112-5281b935-4997-4784-9be9-1d10469184cd.png">
+</div>
+
+
 
 * **Dispose with refresh:** To dispose a chat room, the last user has to dispose the chat room by refreshing the page once making it extremely easy to keep your chats private.
 * **No database permit:** The service is officially licensed to use no actual database service. This means the information you provide to this web app, your name, every bit of conversation, nothing is ever stored.
