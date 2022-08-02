@@ -5,8 +5,8 @@ Temporary disposable chat-room / mail box generator, secure enough to keep your 
 * **Base usage:** Initiate a chat room which can be used by over 200 people at the same time around the planet.
 * **Why this:** Literally less than 5 seconds required to create a private mailing list and start texting your mates.
 * **Clean UI:** The app uses [Material UI](https://mui.com/) and [Chakra UI](https://chakra-ui.com/) for a clean interface.
-* **Dispose with refresh:** To dispose a chat room, the last user has to dispose the chat room by refreshing the page once making it extremely easy to keep your chats private.
-* **No database backup:** No use of an actual database service. texts sent over the web app, your name, every bit of conversation, nothing is stored.
+* **Dispose with refresh:** To dispose a room, the last user has refresh the page once which removes chats from the network.
+* **No strings attached:** No use of an actual database service. texts sent over the web app, your name, every bit of conversation, nothing is stored.
 * **Low latency:** Less than `400ms` of total websocket end-points connection time tested across the planet.
 <div align="center">
   <img src="https://user-images.githubusercontent.com/76242518/182447905-296aed99-64b2-4e13-86d3-bddbb2f8e1fe.png">
