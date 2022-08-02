@@ -1,10 +1,13 @@
-# [Fortlax.io](https://fortlax.vercel.app) | [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) |  [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) | [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/sambhavsaxena/TheMonospace-CloudBased)
+# [Fortlax.io](https://fortlax.vercel.app)
 
 Temporary disposable chat-room / mail box generator, secure enough to keep your secrets.
 
 * **Base usage:** Initiate a chat room which can be used by over 200 people at the same time around the planet.
 * **Why this:** Literally less than 5 seconds required to create a private mailing list and start texting your mates.
-* **Instant reactions:** A `< 20ms latency` speed has been technically added with the latest release which allows users to chat in sharp real time.
+* **Low latency:** Less than `800ms` of overall total websocket connection time tested across the planet.
+
+![image](https://user-images.githubusercontent.com/76242518/182445235-7efe3457-f4af-46cb-9476-8c926175975f.png)
+
 * **Dispose with refresh:** To dispose a chat room, the last user has to dispose the chat room by refreshing the page once making it extremely easy to keep your chats private.
 * **No database permit:** The service is officially licensed to use no actual database service. This means the information you provide to this web app, your name, every bit of conversation, nothing is ever stored.
 * **Clean UI:** The app uses [Material UI](https://mui.com/) and [Chakra UI](https://chakra-ui.com/) for a clean interface.
