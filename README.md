@@ -6,7 +6,7 @@ Temporary disposable chat-room / mail box generator, secure enough to keep your 
 * **Why this:** Literally less than 5 seconds required to create a private mailing list and start texting your mates.
 * **Clean UI:** The app uses [Material UI](https://mui.com/) and [Chakra UI](https://chakra-ui.com/) for a clean interface.
 * **Dispose with refresh:** To dispose a room, the last user has refresh the page once which removes chats from the network.
-* **No strings attached:** No use of an actual database service. texts sent over the web app, your name, every bit of conversation, nothing is stored.
+* **No strings attached:** No use of an actual database service. Texts sent over the web app, your name, every bit of conversation, nothing is stored.
 * **Low latency:** Less than `400ms` of total websocket end-points connection time tested across the planet.
 <div align="center">
   <img src="https://user-images.githubusercontent.com/76242518/182447905-296aed99-64b2-4e13-86d3-bddbb2f8e1fe.png">
@@ -15,17 +15,17 @@ Temporary disposable chat-room / mail box generator, secure enough to keep your 
 
 ## Installation
 
-React has been designed for gradual adoption from the start, and **you can use as little or as much React as you need**:
+Follow the steps to get started. **You can use as little or as much React as you need**:
 
-* Fork and clone [this](https://github.com/sambhavsaxena/fortlax.io) repository make an instant copy of the content.
+* Fork and clone [this](https://github.com/sambhavsaxena/fortlax.io) repository to make an instant copy of the content.
 * Alternatively, you can download the source and set it up with Github Desktop.
-* Open the root folder in the code editor you prefer, and run the following commands:
+* Open the root folder in the code editor of your preference, and run the following commands:
 
 1) npm install
 2) npm start
 3) Server is configured in [SocketContent.js](https://github.com/sambhavsaxena/fortlax.io/blob/main/src/socketContext.js).
 
-###### [Swiftfront](https://github.com/sambhavsaxena/fortlax-server) is used as the realtime server for this client.
+###### [Fortlax-server](https://github.com/sambhavsaxena/fortlax-server) is used as the realtime server for this client.
 
 ## Documentation
 
