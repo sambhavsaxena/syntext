@@ -6,8 +6,9 @@ Temporary disposable chat-room / mail box generator, secure enough to keep your 
 * **Why this:** Literally less than 5 seconds required to create a private mailing list and start texting your mates.
 * **Clean UI:** The app uses [Chakra UI](https://chakra-ui.com/) for a clean interface.
 * **Dispose with refresh:** To dispose a room, the last user has refresh the page once which removes chats from the network.
-* **No strings attached:** No use of an actual database service. Texts sent over the web app, your name, every bit of conversation, nothing is stored.
+* **No strings attached:** Texts sent over the web app, your name, every bit of conversation, nothing is ever stored.
 * **Low latency:** Less than `400ms` of total websocket end-points connection time tested across the planet.
+
 <div align="center">
   <img src="https://user-images.githubusercontent.com/76242518/182447905-296aed99-64b2-4e13-86d3-bddbb2f8e1fe.png">
 </div>
