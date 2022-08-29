@@ -15,7 +15,6 @@ Temporary disposable chat-room / mail box generator, secure enough to keep your 
   <img src="https://user-images.githubusercontent.com/76242518/182447905-296aed99-64b2-4e13-86d3-bddbb2f8e1fe.png">
 </div>
 
-
 ## Installation
 
 Follow the steps to get started. **You can use as little or as much React as you need**:
