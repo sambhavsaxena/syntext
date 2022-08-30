@@ -26,7 +26,7 @@ Follow the steps to get started. **You can use as little or as much React as you
 * - npm start
 * - server is configured in [SocketContent.js](https://github.com/sambhavsaxena/fortlax.io/blob/main/src/socketContext.js).
 
-###### [Fortlax-server](https://github.com/sambhavsaxena/fortlax-server) is used as the realtime server for this client.
+[Fortlax-server](https://github.com/sambhavsaxena/fortlax-server) is used as the realtime server for this client.
 
 ## Documentation
 
