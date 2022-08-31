@@ -11,9 +11,7 @@ Temporary disposable chat-room / mail box generator, secure enough to keep your 
 * **No strings attached:** Texts sent over the web app, your name, every bit of conversation, nothing is ever stored.
 * **Low latency:** Less than `400ms` of total websocket end-points connection time tested across the planet.
 
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/76242518/182447905-296aed99-64b2-4e13-86d3-bddbb2f8e1fe.png">
-</div>
+![test](https://raw.githubusercontent.com/thatsameguyokay/images/main/fortlax.gif)
 
 ## Installation
 
