@@ -13,10 +13,10 @@ It has been tested for latency across the planet (using TOR network) and still w
 * **Clean UI:** The app uses [Chakra UI](https://chakra-ui.com/) for a clean interface.
 * **Dispose with refresh:** To dispose a room, the last user has refresh the page once which removes chats from the network.
 * **No strings attached:** Texts sent over the web app, your name, every bit of conversation, nothing is ever stored.
-* **Low latency:** Less than `400ms` of total websocket end-points connection time tested across the planet.
+* **Low latency:** Less than `100ms` of total end-points connection time tested for servers across the planet.
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/76242518/182447905-296aed99-64b2-4e13-86d3-bddbb2f8e1fe.png">
+  <img src="https://raw.githubusercontent.com/thatsameguyokay/images/main/fortlax.png">
 </div>
 
 ## Installation
