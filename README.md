@@ -1,7 +1,10 @@
 # [Fortlax.io](https://fortlax.vercel.app)
 
-Temporary disposable chat-room / mail box generator, secure enough to keep your chats private.
+Fortlax.io is a disposable chat-room which supports multiple devices and works with real time channels for instant communication.
+It has been tested for latency across the planet (using TOR network) and still works with a max latency of around `44ms`.
 
+
+<div align="center">DEMO</div>
 ![test](https://raw.githubusercontent.com/thatsameguyokay/images/main/fortlax.gif)
 
 * **Base usage:** Initiate a chat room which can be used by over 200 people at the same time around the planet.
