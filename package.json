@@ -1,6 +1,6 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "fortlax",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^1.1.5",
