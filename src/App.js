@@ -3,10 +3,10 @@ import Login from './components/Login/Login'
 import Chat from './components/Chat/Chat'
 import { SocketProvider } from './socketContext'
 import { MainProvider } from './mainContext'
-import './App.css'
 import { ChakraProvider, Flex } from "@chakra-ui/react"
 import { UsersProvider } from './usersContext'
 import DefaultPage from './components/DefaultPage'
+import './App.css'
 
 function App() {
   return (
