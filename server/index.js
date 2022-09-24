@@ -4,14 +4,11 @@ const io = require('socket.io')(http)
 const cors = require('cors')
 const env = require('dotenv')
 const data = require('./data.json')
-
-env.config()
-
-const PORT = process.env.PORT || process.env.PORT2
 const { addUser, getUser, deleteUser, getUsers } = require('./users')
 
+env.config()
+const PORT = process.env.PORT || process.env.PORT2
 app.use(cors())
-
 io.on('connection', (socket) => {
     socket.on('login', ({ name, room }, callback) => {
         const { user, error } = addUser(socket.id, name, room)
@@ -21,12 +18,10 @@ io.on('connection', (socket) => {
         io.in(room).emit('users', getUsers(room))
         callback()
     })
-
     socket.on('sendMessage', message => {
         const user = getUser(socket.id)
         io.in(user.room).emit('message', { user: user.name, text: message });
     })
-
     socket.on("disconnect", () => {
         const user = deleteUser(socket.id)
         if (user) {
@@ -39,7 +34,6 @@ io.on('connection', (socket) => {
 app.get('/', (req, res) => {
     res.json(data)
 })
-
 http.listen(PORT, () => {
     console.log(`Listening on ${PORT}`);
 })

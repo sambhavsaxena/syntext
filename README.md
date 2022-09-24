@@ -3,8 +3,8 @@
 Fortlax.io is a disposable chat-room which supports multiple devices and works with real time channels for instant communication.
 It has been tested for latency across the planet (using TOR network) and still works with a max latency of around `44ms`.
 
-
 <div align="center">DEMO</div>
+
 
 ![test](https://raw.githubusercontent.com/thatsameguyokay/images/main/fortlax.gif)
 
@@ -26,12 +26,18 @@ Follow the steps to get started. **You can use as little or as much React as you
 * Fork and clone [this](https://github.com/sambhavsaxena/fortlax.io) repository to make an instant copy of the content.
 * Alternatively, you can download the source and set it up with Github Desktop.
 * Open the root folder in the code editor of your preference, and run the following commands:
+
 ```
  npm install
  npm start
 ```
 
 The server is configured in [SocketContent.js](https://github.com/sambhavsaxena/fortlax.io/blob/main/src/socketContext.js).
+
+## to-do
+
+Configure the `server` directory to use local proxy through the application, instead of providing an open-to-all API.
+Understanding this [package.json](https://github.com/sambhavsaxena/ikigai/blob/081e3e781e2621d0205d2d743511ecb66e2ffc7d/frontend/package.json#L3) might help with the implementation.
 
 ## Documentation
 
