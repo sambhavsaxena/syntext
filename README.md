@@ -5,7 +5,6 @@ It has been tested for latency across the planet (using TOR network) and still w
 
 <div align="center">DEMO</div>
 
-
 ![test](https://raw.githubusercontent.com/thatsameguyokay/images/main/fortlax.gif)
 
 * **Base usage:** Initiate a chat room which can be used by over 200 people at the same time around the planet.
