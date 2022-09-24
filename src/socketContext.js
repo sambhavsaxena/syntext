@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { createContext } from 'react'
 import io from 'socket.io-client'
-
-const SocketContext = React.createContext()
+const SocketContext = createContext()
 const SocketProvider = ({ children }) => {
     const ENDPOINT = 'https://fortlax.herokuapp.com/';
     const socket = io(ENDPOINT, { transports: ['websocket', 'polling'] })

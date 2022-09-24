@@ -20,7 +20,6 @@ const Chat = () => {
     const { users } = useContext(UsersContext)
     const history = useHistory()
     const toast = useToast()
-
     const handleKeyDown = (ev) => {
         if (ev.keyCode === 13) {
             if (!!message) {
@@ -28,7 +27,6 @@ const Chat = () => {
             }
         }
     }
-
     const handleChange = (ev) => {
         if (ev.target.value === ' ') {
             return
@@ -37,22 +35,18 @@ const Chat = () => {
             setMessage(ev.target.value)
         }
     }
-
     const componentDecorator = (href, text, key) => (
         <a href={href} key={key} target="_blank" rel="noreferrer">
             {text}
         </a>
     );
-
     window.onpopstate = e => logout()
-
     useEffect(() => {
         if (!name) return history.push('/');
 
         socket.on("message", msg => {
             setMessages(messages => [...messages, msg]);
         })
-
         socket.on("notification", notif => {
             toast({
                 position: "top",
@@ -64,18 +58,15 @@ const Chat = () => {
             })
         })
     }, [socket, toast, history, name])
-
     const handleSendMessage = () => {
         socket.emit('sendMessage', message, () => setMessage(''))
         setMessage('')
     }
-
     const logout = () => {
         setName(''); setRoom('');
         history.push('/')
         history.go(0)
     }
-
     return (
         <Flex className='room' flexDirection='column' width={{ base: "100%", sm: '575px' }} height={{ base: "100%", sm: "auto" }}>
             <Heading className='heading' as='h4' bg='black' p='1rem 1.5rem' borderRadius='10px 10px 0 0'>

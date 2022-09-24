@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { MainContext } from '../../mainContext'
 import { SocketContext } from '../../socketContext'
@@ -11,11 +11,11 @@ import Footer from '../Footer'
 
 const Login = () => {
     const socket = useContext(SocketContext)
-    const { name, setName, room, setRoom } = useContext(MainContext)
     const history = useHistory()
-    const [isLoading, setIsLoading] = React.useState(false)
     const toast = useToast()
+    const { name, setName, room, setRoom } = useContext(MainContext)
     const { setUsers } = useContext(UsersContext)
+    const [isLoading, setIsLoading] = useState(false)
     useEffect(() => {
         socket.on("users", users => {
             setUsers(users)
@@ -23,7 +23,7 @@ const Login = () => {
     })
     const handleKeyDown = (ev) => {
         if (ev.keyCode === 13) {
-            if ((!!name || !!room) || (name || !!room) || (!!name || room)) handleClick()
+            if (name && room) handleClick()
         }
     }
     const handleClick = () => {

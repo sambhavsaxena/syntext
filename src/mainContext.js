@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 const MainContext = React.createContext()
 
 const MainProvider = ({ children }) => {
