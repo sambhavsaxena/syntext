@@ -6,10 +6,8 @@ const addUser = (id, name, room) => {
     if (!name && !room) return { error: "Username and room are required" }
     if (name.length < 3) return { error: "Username must be at least three characters" }
     if (room.length < 3) return { error: "Room name must be at least three characters" }
-    if (!name) return { error: "Username is required" }
-    if (!room) return { error: "Room is required" }
-    if (!regex.test(name)) return { error: "Username must be alphanumeric" }
-    if (!regex.test(room)) return { error: "Room name must be alphanumeric" }
+    if (!name && !regex.test(name)) return { error: "Username must be alphanumeric" }
+    if (!room && !regex.test(room)) return { error: "Room name must be alphanumeric" }
     const user = { id, name, room }
     users.push(user)
     return { user }
