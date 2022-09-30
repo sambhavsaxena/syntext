@@ -79,7 +79,6 @@
             color: rgba(255, 255, 255, 0.8);
             width: 100%;
             padding: 1.5rem;
-            border-radius: 0px 0px 15px 15px;
         }
 
         button {
@@ -88,10 +87,6 @@
             top: 1rem;
         }
     }
-}
-
-::placeholder {
-    opacity: .5;
 }
 
 @media(max-width : 30em) {
@@ -105,6 +100,10 @@
             max-height: 85vh;
         }
     }
+}
+
+::placeholder {
+    opacity: .5;
 }
 
 ::-webkit-scrollbar {
