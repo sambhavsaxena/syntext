@@ -13,6 +13,7 @@ It has been tested for latency across the planet (using TOR network) and still w
 * **Dispose with refresh:** To dispose a room, the last user has refresh the page once which removes chats from the network.
 * **No strings attached:** Texts sent over the web app, your name, every bit of conversation, nothing is ever stored.
 * **Low latency:** Less than `100ms` of total end-points connection time tested for servers across the planet.
+* **Fast servers:** Hosted on scalable, lightening fast servers by [Render.com](https://render.com).
 
 <div align="center">
   <img src="https://cdn.statically.io/gh/thatsameguyokay/images/main/fortlax.png">
