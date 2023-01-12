@@ -15,7 +15,7 @@ It has been tested for latency across the planet (using TOR network) and still w
 * **Low latency:** Less than `100ms` of total end-points connection time tested for servers across the planet.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/thatsameguyokay/images/main/fortlax.png">
+  <img src="https://cdn.statically.io/gh/thatsameguyokay/images/main/fortlax.png">
 </div>
 
 ## Installation
