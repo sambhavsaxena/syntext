@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 * {
-    outline: none !important;
-    margin: 0;
-    padding: 0;
+  outline: none !important;
+  margin: 0;
+  padding: 0;
 }
 
 .App {
-    font-family: 'DM Sans';
-    height: 100vh;
-    background: black;
-    background-color: black;
+  font-family: "DM Sans";
+  height: 100vh;
+  background: black;
+  background-color: black;
 }
