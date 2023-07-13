@@ -76,7 +76,6 @@ const Chat = () => {
     setName("");
     setRoom("");
     history("/");
-    history.go(0);
   };
   return (
     <Flex
