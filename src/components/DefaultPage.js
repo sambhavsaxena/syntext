@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function DefaultPage() {
   const history = useNavigate();
-  const redirect = () => history("/");
+  const redirect = () => history.push("/");
   return (
     <div style={{ border: "1px solid", borderRadius: "50px", padding: "12px" }}>
       <IconButton
