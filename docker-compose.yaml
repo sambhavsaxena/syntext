@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  reactx:
+    build: .
+    container_name: fortlaxmain
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
