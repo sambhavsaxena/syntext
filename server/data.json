@@ -1,20 +1,19 @@
 [
-    {
-        "author": "Sambhav Saxena",
-        "Project Title": "Fortlax.io",
-        "Github Repository": "https://github.com/sambhavsaxena/fortlax-server",
-        "Portfolio": "https://sambhavsaxena.me/",
-        "Github": "https://github.com/sambhavsaxena",
-        "LinkedIn": "https://www.linkedin.com/in/sambhavsaxena/",
-        "Quora": "https://www.quora.com/profile/Sambhav-Saxena-5",
-        "Instagram": "https://www.instagram.com/xambhav",
-        "About": {
-            "Country": "India",
-            "Education": "Undergrad with major in Computer Science, batch of 2024",
-            "BirthYear": "2002",
-            "Interests": "Travel, read and code",
-            "Sports": "Badminton, Volleyball, Swimming",
-            "Languages": "English, Hindi"
-        }
+  {
+    "author": "Sambhav Saxena",
+    "Project Title": "Syntext",
+    "Github Repository": "https://github.com/sambhavsaxena/syntext",
+    "Portfolio": "https://interpreted.vercel.app/",
+    "Github": "https://github.com/sambhavsaxena",
+    "LinkedIn": "https://www.linkedin.com/in/sambhavsaxena/",
+    "Quora": "https://www.quora.com/profile/Sambhav-Saxena-5",
+    "Instagram": "https://www.instagram.com/xambhav",
+    "About": {
+      "Country": "India",
+      "Education": "Undergrad with major in Computer Science, batch of 2024",
+      "Interests": "Travel, read an code",
+      "Sports": "Badminton, Volleyball, Swimming",
+      "Languages": "English, Hindi"
     }
+  }
 ]
