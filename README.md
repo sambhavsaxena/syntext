@@ -3,9 +3,14 @@
 Syntext is a disposable chat-room which supports multiple devices and works with real time channels for instant communication.
 It has been tested for latency across the planet (using TOR network) and still works with a max latency of around `44ms`.
 
-<div align="center">DEMO</div>
+<div align="center">
+  DEMO
+  
 
-![test](https://cdn.statically.io/gh/thatsameguyokay/images/main/fortlax.gif)
+https://github.com/user-attachments/assets/bfb1346d-b0d9-4b8d-ba4e-0c4940ff647c
+
+
+</div>
 
 - **Base usage:** Initiate a chat room which can be used by over 200 people at the same time around the planet.
 - **Why this:** Literally less than 5 seconds required to create a private mailing list and start texting your mates.
