@@ -6,7 +6,8 @@ It has been tested for latency across the planet (using TOR network) and still w
 <div align="center">
   DEMO
 
-  ![rec](https://github.com/user-attachments/assets/8d8ab83b-a2e3-43e5-90ab-00fcf3ff51c2)
+![record](https://github.com/user-attachments/assets/063cc214-c721-4f57-b77c-27c4173d6e03)
+
 </div>
 
 - **Base usage:** Initiate a chat room which can be used by over 200 people at the same time around the planet.
