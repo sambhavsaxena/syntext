@@ -1,123 +1,123 @@
 .room {
-    box-shadow: -1px -1px 50px rgb(0, 0, 255);
-    animation: custom-animation 6s infinite;
+  box-shadow: -1px -1px 50px rgb(0, 0, 255);
+  animation: custom-animation 6s infinite;
 
-    @keyframes custom-animation {
-        50% {
-            box-shadow: 1px 1px 25px rgb(0, 0, 0);
+  @keyframes custom-animation {
+    50% {
+      box-shadow: 1px 1px 25px rgb(0, 0, 0);
+    }
+  }
+
+  .heading {
+    font-family: "DM Sans";
+    color: rgb(70, 70, 70);
+    font-size: 2rem;
+    font-weight: 500;
+    z-index: 1000;
+  }
+
+  .messages {
+    background: black;
+
+    .message {
+      margin-right: 12px;
+
+      .user {
+        color: #43d585;
+      }
+
+      .msg {
+        border: 2px solid #e4e4e4;
+        color: white;
+        background: rgba(0, 0, 0, 0.9);
+        width: fit-content;
+
+        a {
+          color: yellow;
         }
+      }
     }
 
-    .heading {
-        font-family: 'DM Sans';
-        color: rgb(70, 70, 70);
-        font-size: 2rem;
-        font-weight: 500;
-        z-index: 1000;
+    .my-message {
+      align-self: flex-end;
+      margin-right: -3px;
+      margin-left: 12px;
+
+      .user {
+        display: none;
+      }
+
+      .msg {
+        border: 1px solid rgba(78, 78, 78, 0.788);
+        color: rgba(255, 255, 255, 0.8);
+        background: rgb(0, 0, 0);
+
+        a {
+          color: yellow;
+        }
+      }
+    }
+  }
+
+  .messages > div {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: auto !important;
+    overflow: auto;
+    min-height: 400px;
+    max-height: 400px;
+    padding: 1rem;
+  }
+
+  .form {
+    position: relative;
+    z-index: 1000;
+
+    input {
+      background-color: black;
+      color: rgba(255, 255, 255, 0.8);
+      width: 100%;
+      padding: 1.5rem;
     }
 
-    .messages {
-        background: black;
-
-        .message {
-            margin-right: 12px;
-
-            .user {
-                color: #253bff;
-            }
-
-            .msg {
-                border: 1px solid #253bff;
-                color: white;
-                background: rgba(0, 0, 0, 0.9);
-                width: fit-content;
-
-                a {
-                    color: yellow;
-                }
-            }
-        }
-
-        .my-message {
-            align-self: flex-end;
-            margin-right: -3px;
-            margin-left: 12px;
-
-            .user {
-                display: none;
-            }
-
-            .msg {
-                border: 1px solid rgba(78, 78, 78, 0.788);
-                color: rgba(255, 255, 255, 0.8);
-                background: rgb(0, 0, 0);
-
-                a {
-                    color: yellow;
-                }
-            }
-        }
+    button {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
     }
-
-    .messages>div {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        width: auto !important;
-        overflow: auto;
-        min-height: 400px;
-        max-height: 400px;
-        padding: 1rem;
-    }
-
-    .form {
-        position: relative;
-        z-index: 1000;
-
-        input {
-            background-color: black;
-            color: rgba(255, 255, 255, 0.8);
-            width: 100%;
-            padding: 1.5rem;
-        }
-
-        button {
-            position: absolute;
-            right: 1rem;
-            top: 1rem;
-        }
-    }
+  }
 }
 
-@media(max-width : 30em) {
-    .room {
-        .messages {
-            flex: 1;
-        }
-
-        .messages>div {
-            min-height: 85vh;
-            max-height: 85vh;
-        }
+@media (max-width: 30em) {
+  .room {
+    .messages {
+      flex: 1;
     }
+
+    .messages > div {
+      min-height: 85vh;
+      max-height: 85vh;
+    }
+  }
 }
 
 ::placeholder {
-    opacity: .5;
+  opacity: 0.5;
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: black;
+  background: black;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(30, 88, 155);
+  background: rgb(30, 88, 155);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(30, 88, 155);
+  background: rgb(30, 88, 155);
 }
