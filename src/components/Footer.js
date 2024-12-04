@@ -13,7 +13,7 @@ const Footer = () => {
       >
         By&nbsp;
         <a target="_blank" rel="noreferrer" href="https://github.com/mb-008">
-          Mukul Bhardwaj
+          Sambhav Saxena
         </a>
       </div>
     </div>
