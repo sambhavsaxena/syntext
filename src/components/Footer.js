@@ -12,7 +12,7 @@ const Footer = () => {
         }}
       >
         By&nbsp;
-        <a target="_blank" rel="noreferrer" href="https://github.com/mb-008">
+        <a target="_blank" rel="noreferrer" href="https://github.com/sambhavsaxena">
           Sambhav Saxena
         </a>
       </div>
